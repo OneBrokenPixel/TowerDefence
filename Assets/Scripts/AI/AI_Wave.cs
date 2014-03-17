@@ -1,17 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
+using Hostile.SimplePool;
 
 [AddComponentMenu("Scripts/AI/Wave")]
 public class AI_Wave : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
+	public string key = "default";
+
+	[Serializable]
+	public class SubWave
+	{
+		public int count = 1;
+		public SimplePool pool;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+	public SubWave[] subWaves;
 }
