@@ -80,6 +80,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 80
+  hitPoints: 4
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
