@@ -15,18 +15,18 @@ public class AI_Controller : MonoBehaviour {
 	private IEnumerator<WaitForSeconds> waveSpawner(int wave)
 	{
 		
-		Debug.Log("Starting Wave " + wave);
+		//Debug.Log("Starting Wave " + wave);
 		for( int i = wave; i < waveList.Count; i++ )
 		{
 			yield return new WaitForSeconds(spawnInterval);
 
 			AI_Wave this_wave = waveList[i];
 
-			Debug.Log("wave " + this_wave.key);
+			//Debug.Log("wave " + this_wave.key);
 
 			foreach( AI_Wave.SubWave sub in this_wave.subWaves )
 			{
-				Debug.Log(sub.count);
+				//Debug.Log(sub.count);
 				Quaternion rot = spawnTransform.rotation;
 
 				for( int s = 0; s < sub.count; s++)
@@ -38,7 +38,7 @@ public class AI_Controller : MonoBehaviour {
 			}
 		}
 		
-		Debug.Log( waveList.Count - wave + " Waves Completed");
+		//Debug.Log( waveList.Count - wave + " Waves Completed");
 	}
 
 	// Use this for initialization

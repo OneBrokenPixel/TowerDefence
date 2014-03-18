@@ -17,7 +17,7 @@ public class AI_March : BasePoolComponent {
 
 	public override void OnSpawn ()
 	{
-		Debug.Log("adding force");
+		//Debug.Log("adding force");
 		rigidbody2D.WakeUp();
 		rigidbody2D.AddForce(transform.right * speed);
 	}
@@ -28,7 +28,12 @@ public class AI_March : BasePoolComponent {
 	}
 
 	#endregion
-	
+
+	public void Kill()
+	{
+		pool.Despawn(gameObject);
+	}
+
 	// Update is called once per frame
 	void FixedUpdate () {
 	
