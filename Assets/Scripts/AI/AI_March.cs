@@ -17,7 +17,8 @@ public class AI_March : BasePoolComponent {
 
 	public override void OnSpawn ()
 	{
-		transform.rotation = Quaternion.Euler(0f,0f,180f);
+		Debug.Log("adding force");
+		rigidbody2D.WakeUp();
 		rigidbody2D.AddForce(transform.right * speed);
 	}
 

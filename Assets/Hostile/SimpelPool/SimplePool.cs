@@ -100,6 +100,9 @@ namespace Hostile
 					if( obj != null )
 					{
 
+						obj.transform.position = position;
+						obj.transform.rotation = rotation;
+
 						if( rigidbody != null )
 						{
 							rigidbody.velocity = Vector3.zero;
@@ -112,13 +115,15 @@ namespace Hostile
 							rigidbody2D.angularVelocity = 0f;
 						}
 
+						
+						obj.SetActive(true);
+
 						BasePoolComponent cmp = obj.GetComponent<BasePoolComponent>();
 						if( cmp != null )
 						{
 							cmp.OnSpawn();
 						}
 
-						obj.SetActive(true);
 
 						_active.InsertAtTail(ref obj);
 
@@ -167,9 +172,10 @@ namespace Hostile
 				_inactive = new ComponentList ();
 				_active = new ComponentList ();
 				StartCoroutine (CullRoutine ());
-
+				/*
 				for(int i = 0; i < 6; i++)
 					Spawn();
+					*/
 			}
 		}
 	}
