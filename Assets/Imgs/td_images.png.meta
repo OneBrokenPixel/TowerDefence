@@ -49,55 +49,73 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2
-        y: 450
-        width: 67
-        height: 60
+        y: 236
+        width: 50
+        height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
     - name: td_images_1
       rect:
         serializedVersion: 2
-        x: 76
-        y: 440
-        width: 70
-        height: 64
+        x: 54
+        y: 194
+        width: 67
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
     - name: td_images_2
       rect:
         serializedVersion: 2
-        x: 156
-        y: 440
+        x: 128
+        y: 184
         width: 70
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
     - name: td_images_3
       rect:
         serializedVersion: 2
-        x: 2
-        y: 420
-        width: 50
-        height: 17
+        x: 208
+        y: 184
+        width: 70
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
     - name: td_images_4
       rect:
         serializedVersion: 2
-        x: 64
-        y: 292
-        width: 136
-        height: 136
+        x: 296
+        y: 189
+        width: 128
+        height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
     - name: td_images_5
       rect:
         serializedVersion: 2
-        x: 15
-        y: 216
-        width: 129
-        height: 61
+        x: 12
+        y: 36
+        width: 136
+        height: 134
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
+    - name: td_images_6
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 36
+        width: 134
+        height: 135
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: td_images_7
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 122
+        width: 146
+        height: 51
+      alignment: 4
+      pivot: {x: 0, y: .5}
   spritePackingTag: 
   userData: 
