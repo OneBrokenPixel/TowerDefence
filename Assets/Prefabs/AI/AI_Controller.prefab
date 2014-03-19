@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveList: []
-  spawnInterval: 10
+  spawnInterval: 12
   spawnTransform: {fileID: 400000}
   spawnRadius: 5
 --- !u!114 &11400010

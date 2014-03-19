@@ -11,8 +11,12 @@ public class AI_March : BasePoolComponent {
     public int hitPoints = 1;
     private int _hitpoints;
 
+    private Vector2 _targetVel;
+
     public SimplePool splatPool;
     public GameObject splatGO;
+
+
 
 	// Use this for initialization
 	void Start () {
@@ -26,7 +30,9 @@ public class AI_March : BasePoolComponent {
         _hitpoints = hitPoints;
 		//Debug.Log("adding force");
 		rigidbody2D.WakeUp();
-		rigidbody2D.AddForce(transform.right * speed);
+		//rigidbody2D.AddForce(transform.right * speed);
+
+        _targetVel = transform.right * speed;
 	}
 
 	public override void OnDespawn ()
@@ -59,7 +65,7 @@ public class AI_March : BasePoolComponent {
 	{
         if( splatPool != null )
         {
-            Debug.Log(direction);
+            //Debug.Log(direction);
             GameObject splat = splatPool.Spawn();
             splat.transform.position = transform.position + (Vector3.forward*5);
             splat.transform.rotation = Quaternion.FromToRotation(-Vector3.right, direction);
@@ -75,6 +81,8 @@ public class AI_March : BasePoolComponent {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-	
+        Vector2 diffVel = _targetVel - rigidbody2D.velocity;
+        rigidbody2D.AddForce(diffVel);
+        
 	}
 }
