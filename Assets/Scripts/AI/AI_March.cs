@@ -41,7 +41,7 @@ public class AI_March : BasePoolComponent {
 	}
 
 	#endregion
-
+    /*
     void OnCollisionEnter2D(Collision2D coll)
     {
         if (coll.gameObject.tag == "Weaponry")
@@ -52,7 +52,7 @@ public class AI_March : BasePoolComponent {
             Hit(1, dir);
         }
     }
-
+    */
     public void Hit(int damage,Vector3 direction)
     {
         _hitpoints -= damage;
