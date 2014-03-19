@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveList: []
-  spawnInterval: 15
+  spawnInterval: 10
   spawnTransform: {fileID: 153855754}
   spawnRadius: 5
 --- !u!4 &681505076
@@ -388,6 +388,7 @@ Transform:
   - {fileID: 1064876559}
   - {fileID: 1756076653}
   - {fileID: 534162243}
+  - {fileID: 2037317816}
   m_Father: {fileID: 0}
 --- !u!114 &681505077
 MonoBehaviour:
@@ -616,6 +617,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: e3a9f2614c5a4467fa5cf222c237d15b, type: 2}
+      propertyPath: spawnInterval
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e3a9f2614c5a4467fa5cf222c237d15b, type: 2}
   m_RootGameObject: {fileID: 681505071}
@@ -699,6 +704,10 @@ Prefab:
     - target: {fileID: 400000, guid: c97e626cf183125478608b66586addff, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6100000, guid: c97e626cf183125478608b66586addff, type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c97e626cf183125478608b66586addff, type: 2}
@@ -793,3 +802,46 @@ MonoBehaviour:
   batchCreateCount: 5
   cullInactive: 1
   cullInterval: 10
+--- !u!1 &2037317814
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2037317816}
+  - 114: {fileID: 2037317815}
+  m_Layer: 0
+  m_Name: splats
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2037317815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2037317814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfd02e41409da44a296abd0d61ef0b30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 100000, guid: 3ec5402040727a24d8a719953abd6b29, type: 2}
+  maxCount: 0
+  batchCreateCount: 10
+  cullInactive: 0
+  cullInterval: 10
+--- !u!4 &2037317816
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2037317814}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.33610928, y: .81221801, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 681505076}

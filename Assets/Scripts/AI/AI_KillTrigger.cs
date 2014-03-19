@@ -11,7 +11,7 @@ public class AI_KillTrigger : MonoBehaviour {
 
 		if( march != null )
 		{
-			march.Kill ();
+			march.Remove();
 		}
 	}
 }

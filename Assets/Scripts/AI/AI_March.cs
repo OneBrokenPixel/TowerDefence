@@ -2,6 +2,7 @@
 using System.Collections;
 
 using Hostile.SimplePool.Components;
+using Hostile.SimplePool;
 
 [AddComponentMenu("Scripts/AI/March")]
 public class AI_March : BasePoolComponent {
@@ -9,9 +10,13 @@ public class AI_March : BasePoolComponent {
 	public float speed = 1.0f;
     public int hitPoints = 1;
     private int _hitpoints;
+
+    public SimplePool splatPool;
+    public GameObject splatGO;
+
 	// Use this for initialization
 	void Start () {
-
+        splatPool = SimplePool.FindPoolFor(splatGO);
 	}
 
 	#region implemented abstract members of BasePoolComponent
@@ -35,23 +40,38 @@ public class AI_March : BasePoolComponent {
     {
         if (coll.gameObject.tag == "Weaponry")
         {
-            Hit(1);
-            //GameObject.Destroy(coll.gameObject);
+
+            Vector3 dir = coll.gameObject.transform.position - transform.position;
+
+            Hit(1, dir);
         }
     }
 
-    public void Hit(int damage)
+    public void Hit(int damage,Vector3 direction)
     {
         _hitpoints -= damage;
         if (_hitpoints <= 0)
-            Kill();
+            Kill(direction);
 
     }
 
-	public void Kill()
+	public void Kill(Vector3 direction)
 	{
-		pool.Despawn(gameObject);
+        if( splatPool != null )
+        {
+            Debug.Log(direction);
+            GameObject splat = splatPool.Spawn();
+            splat.transform.position = transform.position + (Vector3.forward*5);
+            splat.transform.rotation = Quaternion.FromToRotation(-Vector3.right, direction);
+            splat.transform.localScale = transform.localScale;
+        }
+        Remove();
 	}
+
+    public void Remove()
+    {
+        pool.Despawn(gameObject);
+    }
 
 	// Update is called once per frame
 	void FixedUpdate () {
