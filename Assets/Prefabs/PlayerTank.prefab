@@ -8,9 +8,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  - 114: {fileID: 11400000}
   - 61: {fileID: 6100000}
   - 50: {fileID: 5000000}
+  - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: PlayerTank
   m_TagString: Player
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0e286a6a39281f449844c606813a1ee, type: 3}
+  m_Script: {fileID: 11500000, guid: cf5971fc243b50f43afef15455e2209e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gun: {fileID: 100004}
@@ -143,7 +143,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 3863452017
   m_Sprite: {fileID: 21300010, guid: 7d20677ff1553594784ddaade8e7e6eb, type: 3}
@@ -166,7 +166,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_SortingLayerID: 3863452017
   m_Sprite: {fileID: 21300014, guid: 7d20677ff1553594784ddaade8e7e6eb, type: 3}
