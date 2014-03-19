@@ -177,6 +177,20 @@ namespace Hostile
 					Spawn();
 					*/
 			}
+
+
+            public static SimplePool FindPoolFor(GameObject prefab)
+            {
+                foreach (SimplePool pool in FindObjectsOfType<SimplePool>())
+                {
+                    if (pool.prefab.Equals(prefab))
+                    {
+                        return pool;
+                    }
+                }
+
+                return null;
+            }
 		}
 	}
 }
