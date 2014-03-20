@@ -16,6 +16,7 @@ public class AI_March : BasePoolComponent {
     public SimplePool splatPool;
     public GameObject splatGO;
 
+    float _scale = 1f;
 
 
 	// Use this for initialization
@@ -28,8 +29,9 @@ public class AI_March : BasePoolComponent {
 	public override void OnSpawn ()
 	{
         _hitpoints = hitPoints;
+        _scale = 1f;
 		//Debug.Log("adding force");
-		rigidbody2D.WakeUp();
+		//rigidbody2D.WakeUp();
 		//rigidbody2D.AddForce(transform.right * speed);
 
         _targetVel = transform.right * speed;
@@ -53,11 +55,36 @@ public class AI_March : BasePoolComponent {
         }
     }
     */
+    private static Color orange = new Color(1, 1, 0);
+    void OnGUI()
+    {
+        
+        Vector2 screen = Camera.main.WorldToScreenPoint(transform.position);
+
+        if (_scale > 0.75f)
+            GUI.backgroundColor = Color.green;
+        else if (_scale > 0.5f)
+            GUI.backgroundColor = Color.yellow;
+        else if (_scale > 0.25f)
+            GUI.backgroundColor = orange;
+        else
+            GUI.backgroundColor = Color.red;
+
+        GUI.Button(new Rect(screen.x - (8 * transform.localScale.x), (Screen.height - screen.y) + (8 * transform.localScale.y), (16 * transform.localScale.x) * _scale, 4), "");
+    }
+
     public void Hit(int damage,Vector3 direction)
     {
         _hitpoints -= damage;
         if (_hitpoints <= 0)
+        {
             Kill(direction);
+            _scale = 0;
+        }
+        else
+        {
+            _scale = ((float)_hitpoints) / hitPoints;
+        }
 
     }
 

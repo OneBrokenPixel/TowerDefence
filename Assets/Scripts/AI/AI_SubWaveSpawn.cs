@@ -16,14 +16,17 @@ public class AI_SubWaveSpawn : MonoBehaviour
         _collider.isTrigger = true;
     }
 
+    private Vector3 _rand3d = new Vector3();
+    private Vector2 _rand2d = new Vector2();
+
     public Vector3 spawnCoordinate
     {
         get
         {
-            Vector3 rand = UnityEngine.Random.insideUnitSphere;
-            rand.z = 0;
-            rand.Normalize();
-            return transform.position + (rand*_collider.radius);
+            _rand2d = UnityEngine.Random.insideUnitCircle;
+
+            _rand3d.Set(_rand2d.x, _rand2d.y, 0.0f);
+            return transform.position + (_rand3d * _collider.radius);
         }
     }
 }
