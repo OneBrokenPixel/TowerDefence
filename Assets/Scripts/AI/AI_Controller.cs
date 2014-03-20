@@ -6,34 +6,32 @@ using System.Linq;
 public class AI_Controller : MonoBehaviour {
 
 	public List<AI_Wave> waveList;
-	public float spawnInterval = 10f;
+	//public float spawnInterval = 10f;
 	private int _currentWave = 0;
 
 	private Coroutine _waveSpawnerRoutine;
-	public Transform spawnTransform;
-	public float spawnRadius = 5;
+	//public Transform spawnTransform;
+	//public float spawnRadius = 5;
 	private IEnumerator<WaitForSeconds> waveSpawner(int wave)
 	{
 		
 		//Debug.Log("Starting Wave " + wave);
 		for( int i = wave; i < waveList.Count; i++ )
-		{
-			yield return new WaitForSeconds(spawnInterval);
+        {
+            AI_Wave this_wave = waveList[i];
+            yield return new WaitForSeconds(this_wave.spawnInterval);
 
-			AI_Wave this_wave = waveList[i];
 
 			//Debug.Log("wave " + this_wave.key);
 
 			foreach( AI_Wave.SubWave sub in this_wave.subWaves )
 			{
 				//Debug.Log(sub.count);
-				Quaternion rot = spawnTransform.rotation;
+                Quaternion rot = sub.spawnPoint.transform.rotation;
 
 				for( int s = 0; s < sub.count; s++)
 				{
-					Vector3 vec = spawnTransform.position + ( Random.insideUnitSphere * spawnRadius );
-					vec.z = 0f;
-					sub.pool.Spawn(vec,rot);
+					sub.pool.Spawn(sub.spawnPoint.spawnCoordinate,rot);
 				}
 			}
 		}
@@ -49,7 +47,7 @@ public class AI_Controller : MonoBehaviour {
 
 		waveList.Sort(
 			delegate(AI_Wave p1, AI_Wave p2) {
-				return p1.key.CompareTo(p2.key);
+				return p1.name.CompareTo(p2.name);
 			}
 		);
 
