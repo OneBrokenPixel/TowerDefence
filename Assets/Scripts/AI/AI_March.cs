@@ -40,6 +40,10 @@ public class AI_March : BasePoolComponent {
 
         _player = GameObject.FindGameObjectWithTag("Player");
         _seeker = GetComponent<Seeker>();
+        if (_seeker == null)
+        {
+            gameObject.AddComponent<Seeker>();
+        }
         _seeker.StartPath(transform.position, _player.transform.position, OnPathComplete);
         _hitpoints = hitPoints;
         _scale = 1f;

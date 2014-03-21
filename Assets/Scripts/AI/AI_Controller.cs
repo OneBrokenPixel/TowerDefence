@@ -10,6 +10,7 @@ public class AI_Controller : MonoBehaviour {
 	private int _currentWave = 0;
 
 	private Coroutine _waveSpawnerRoutine;
+    private AstarPath _aStar;
 	//public Transform spawnTransform;
 	//public float spawnRadius = 5;
 	private IEnumerator<WaitForSeconds> waveSpawner(int wave)
@@ -42,7 +43,10 @@ public class AI_Controller : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-	
+        _aStar = FindObjectOfType<AstarPath>();
+
+        _aStar.AutoScan();
+
 		waveList = new List<AI_Wave>(GameObject.FindObjectsOfType<AI_Wave>());
 
 		waveList.Sort(
