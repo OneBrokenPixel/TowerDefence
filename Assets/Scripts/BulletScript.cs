@@ -11,15 +11,16 @@ public class BulletScript : MonoBehaviour {
     */
 
     public int damage = 1;
+    public int speed = 1;
 
     void OnTriggerEnter2D(Collider2D coll)
     {
 
-        AI_March ai = coll.gameObject.GetComponent<AI_March>();
+        AI_Base ai = coll.gameObject.GetComponent<AI_Base>();
 
         if (ai != null)
         {
-            ai.Hit(damage, this.transform.position - coll.transform.position );
+            ai.Hit(this.transform.position - coll.transform.position, damage);
         }
 
         Destroy(gameObject);
