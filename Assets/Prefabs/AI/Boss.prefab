@@ -83,7 +83,7 @@ MonoBehaviour:
   hitPoints: 10
   splatPool: {fileID: 0}
   splatGO: {fileID: 100000, guid: 3ec5402040727a24d8a719953abd6b29, type: 2}
-  nextWaypointDistance: 3
+  nextWaypointDistance: 1
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

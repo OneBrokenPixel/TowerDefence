@@ -18,10 +18,16 @@ namespace Hostile
 		using Core;
 		namespace Components
 		{
+            /**
+              * @brief Abstact Base class for GameObjects created by pools.
+              */
 			public abstract class BasePoolComponent : MonoBehaviour
 			{
 				private SimplePool _pool;
 
+                /**
+                  * @b the pool component that spawned this object.
+                  */
 				public SimplePool pool {
 					get
 					{
@@ -29,12 +35,25 @@ namespace Hostile
 					}
 				}
 
+                /**
+                  * @b function called by SimplePool when an object is cloned.
+                  * 
+                  * Allows code to be implemented when this object is added to the scene but is not yet active.
+                  * 
+                  * @param the simple pool that created this object.
+                  */
 				public void OnCreatedByPool( SimplePool pool )
 				{
 					_pool = pool;
 				}
 
+                /**
+                  * @b abstract function that is called when the object is spawned and becomes active.
+                  */
 				public abstract void OnSpawn();
+                /**
+                  * @b abstract function that is called when the object is removed and becomes inactive.
+                  */
 				public abstract void OnDespawn();
 			}
 		}

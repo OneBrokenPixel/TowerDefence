@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!50 &5000000
@@ -81,7 +81,7 @@ MonoBehaviour:
   hitPoints: 1
   splatPool: {fileID: 0}
   splatGO: {fileID: 100000, guid: 3ec5402040727a24d8a719953abd6b29, type: 2}
-  nextWaypointDistance: 3
+  nextWaypointDistance: 1
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
