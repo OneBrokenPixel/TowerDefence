@@ -34,7 +34,7 @@ public class PlayerTankScript : MonoBehaviour {
         nextFire += Time.deltaTime;
         if (nextFire >= fireRate) {
             GameObject b = Instantiate(bullet, gun.transform.position+(1.3f*gun.transform.right), gun.transform.rotation) as GameObject;
-            b.rigidbody2D.velocity = b.transform.right * 4;
+            b.rigidbody2D.velocity = b.transform.right * 32;
             nextFire = 0.0f;
         }
 
